@@ -330,10 +330,10 @@ class TextInputView: BaseView {
     private func adjustPlaceholder() {
         
         if isRecording {
-            if messageTextView.text != "Говорите..." {
+            if messageTextView.text != "Говорите..." && messageTextView.text != "Speak..." {
                 if messageTextView.text.isEmpty {
                     messageTextView.textColor = Colors.placeholderColor
-                    messageTextView.text =  "Говорите..."
+                    messageTextView.text =  language == .Ru ? "Говорите..." : "Speak..."
                     messageTextView.font = UIFont.systemFont(ofSize: 17.0, weight: .heavy)
                 } else {
                     messageTextView.textColor = .white
