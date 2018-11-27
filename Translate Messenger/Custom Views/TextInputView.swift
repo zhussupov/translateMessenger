@@ -192,7 +192,8 @@ class TextInputView: BaseView {
     @objc private func didTapSend() {
         guard let messageText = messageTextView.text else { return }
         
-        if messageText.trimmingCharacters(in: .whitespaces).isEmpty {
+        let isPlaceholder = messageTextView.textColor == Colors.placeholderColor
+        if messageText.trimmingCharacters(in: .whitespaces).isEmpty || isPlaceholder {
             return
         }
         
@@ -243,7 +244,6 @@ class TextInputView: BaseView {
         if messageTextView.textColor == Colors.placeholderColor {
             clearTextField()
         }
-        adjustPlaceholder()
     }
     
     func resignResponder() {
