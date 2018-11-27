@@ -178,7 +178,7 @@ class TextInputView: BaseView {
     private func changeLanguage(language: Language, animated: Bool = true) {
         
         messageTextViewPlaceholder = language == .Ru ? "Русский" : "Английский"
-        adjustPlaceholder()
+        clearTextField()
         
         if animated {
             UIView.animate(withDuration: 0.2) {
